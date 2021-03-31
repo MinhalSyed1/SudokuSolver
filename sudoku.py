@@ -4,7 +4,7 @@ algorithm is set up; so we can assume once the board is filled we have reached o
 If we ever reach a position where the solution is not valid we will backtrack.
 This function returns a boolean value relating to if we found the solution or not
 """
-
+import time
 board = [
     [0, 0, 4, 0, 0, 0, 0, 6, 7],
     [3, 0, 0, 4, 7, 0, 0, 0, 5],
@@ -102,8 +102,10 @@ def find_empty(bo):
 
     return None
 
-
 print_board(board)
+tic = time.perf_counter()
 solve(board)
-print("___________________")
+print("------SOLUTION------")
 print_board(board)
+toc = time.perf_counter()
+print(f"Solved the Problem in {toc - tic:0.4f} seconds")
